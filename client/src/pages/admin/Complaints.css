@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap');
+
+.admin-complaints-root {
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: #121F3A;
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 80px;
+}
+
+.bebas { font-family: 'Bebas Neue', sans-serif; }
+.orange-text { color: #FF5F00; }
+
+/* HEADER */
+.admin-simple-header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 4px solid #121F3A;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.admin-simple-header h1 { font-size: 60px; line-height: 1; letter-spacing: -2px; }
+
+/* COMPLAINTS LIST */
+.complaints-list { display: flex; flex-direction: column; gap: 30px; }
+
+.complaint-card {
+  display: flex;
+  border: 4px solid #121F3A;
+  background: white;
+  min-height: 200px;
+}
+
+.card-side-label {
+  background: #121F3A;
+  color: white;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 20px 10px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.card-main-content { padding: 30px; flex: 1; position: relative; }
+
+.card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+.card-header-row h3 { font-size: 32px; letter-spacing: 1px; }
+
+.status-pill {
+  padding: 5px 15px; font-weight: 900; font-size: 11px;
+  border: 2px solid #121F3A;
+}
+.status-pill.open { background: #FF5F00; color: white; border-color: #FF5F00; }
+.status-pill.resolved { background: #10b981; color: white; border-color: #10b981; }
+
+.card-meta { margin-bottom: 20px; font-size: 12px; display: flex; gap: 30px; opacity: 0.6; }
+
+.description-text { line-height: 1.6; margin-bottom: 30px; font-size: 15px; max-width: 800px; }
+
+.manage-btn-simple {
+  display: flex; align-items: center; gap: 10px;
+  background: #121F3A; color: white; border: none;
+  padding: 12px 25px; font-weight: 900; font-size: 12px;
+  cursor: pointer; transition: 0.2s;
+}
+.manage-btn-simple:hover { background: #FF5F00; padding-left: 35px; }
+
+/* HIGH PRIORITY HIGHLIGHT */
+.complaint-card.high-priority { border-color: #FF5F00; }
+.complaint-card.high-priority .card-side-label { background: #FF5F00; }
+
+/* MODAL */
+.admin-modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(18, 31, 58, 0.95); z-index: 2000;
+  display: flex; justify-content: center; align-items: center;
+}
+
+.admin-modal-box {
+  background: white; border: 4px solid #FF5F00;
+  width: 100%; max-width: 550px; padding: 50px;
+}
+
+.modal-header-simple { display: flex; justify-content: space-between; margin-bottom: 30px; }
+.modal-header-simple h2 { font-size: 40px; }
+.close-x { background: none; border: none; cursor: pointer; color: #121F3A; }
+
+.input-group-simple { margin-bottom: 25px; }
+.input-group-simple label { display: block; font-weight: 900; font-size: 11px; margin-bottom: 8px; opacity: 0.5; }
+.input-group-simple select, .input-group-simple textarea {
+  width: 100%; padding: 15px; border: 3px solid #121F3A; font-family: inherit; font-weight: 700; outline: none;
+}
+
+.modal-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 30px; }
+.commit-btn { padding: 20px; background: #FF5F00; color: white; border: none; font-weight: 900; cursor: pointer; font-size: 16px; }
+.abort-btn { padding: 15px; background: #121F3A; color: white; border: none; font-weight: 900; cursor: pointer; }
+
+@media (max-width: 768px) {
+  .admin-simple-header h1 { font-size: 35px; }
+  .card-header-row { flex-direction: column; gap: 10px; }
+  .card-main-content { padding: 20px; }
+}

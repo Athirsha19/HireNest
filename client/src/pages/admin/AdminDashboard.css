@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@900&display=swap');
+
+.admin-simple-root {
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #121F3A; /* Navy */
+  padding-bottom: 80px;
+}
+
+.bebas { font-family: 'Bebas Neue', sans-serif; }
+.orange-text { color: #FF5F00; }
+
+/* HEADER */
+.admin-simple-header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 4px solid #121F3A;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.admin-simple-header h1 { font-size: 60px; line-height: 1; letter-spacing: -2px; }
+.admin-simple-header p { font-weight: 900; font-size: 12px; letter-spacing: 2px; }
+
+/* STATS GRID */
+.stats-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-box {
+  border: 4px solid #121F3A;
+  padding: 30px;
+  background: white;
+  transition: 0.2s;
+}
+.stat-box:hover {
+  background: #f8f9fa;
+}
+.stat-box .label { font-weight: 900; font-size: 12px; opacity: 0.6; }
+.stat-box h2 { font-size: 70px; line-height: 1; margin: 10px 0; }
+.stat-box .sub-label { font-size: 11px; font-weight: 900; }
+
+/* Critical box in orange */
+.stat-box.alert {
+  border-color: #FF5F00;
+}
+.stat-box.alert h2 { color: #FF5F00; }
+
+/* ACTION BUTTONS */
+.admin-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  background: #121F3A;
+  color: white;
+  text-decoration: none;
+  font-family: 'Bebas Neue';
+  font-size: 32px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.admin-btn:hover {
+  padding-left: 60px;
+  background: #FF5F00;
+}
+
+.admin-btn.orange-bg {
+  background: #FF5F00;
+}
+.admin-btn.orange-bg:hover {
+  background: #121F3A;
+}
+
+/* UTILS */
+.admin-loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Bebas Neue';
+  font-size: 40px;
+}
+
+@media (max-width: 1000px) {
+  .stats-simple-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-simple-header h1 { font-size: 40px; }
+}

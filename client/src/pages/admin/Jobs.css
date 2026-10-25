@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap');
+
+.admin-jobs-root {
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: #121F3A;
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 80px;
+}
+
+.noise-bg {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.03; pointer-events: none; z-index: 5;
+}
+
+.bebas { font-family: 'Bebas Neue', sans-serif; }
+.orange-text { color: #FF5F00; }
+
+/* HEADER HUD */
+.admin-simple-header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 4px solid #121F3A;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.admin-simple-header h1 { font-size: 60px; line-height: 1; letter-spacing: -2px; }
+.tech-sub { font-family: 'JetBrains Mono'; font-size: 11px; font-weight: 900; opacity: 0.5; display: flex; align-items: center; gap: 8px; }
+
+.header-stats { display: flex; gap: 40px; text-align: right; }
+.h-stat { display: flex; flex-direction: column; }
+.h-stat .label { font-family: 'JetBrains Mono'; font-size: 10px; opacity: 0.4; font-weight: 900; }
+.h-stat .value { font-family: 'Bebas Neue'; font-size: 32px; color: #FF5F00; }
+
+/* JOBS LIST */
+.admin-jobs-list { display: flex; flex-direction: column; gap: 20px; }
+
+.job-log-card {
+  display: flex;
+  border: 4px solid #121F3A;
+  background: white;
+  transition: transform 0.2s;
+}
+.job-log-card:hover { transform: translateX(10px); }
+
+.card-side-status {
+  width: 15px;
+  background: #121F3A;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; }
+
+/* Card Main Area */
+.card-main { padding: 30px; flex: 1; }
+
+.card-row-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px; }
+.employer-tag { font-family: 'JetBrains Mono'; font-size: 11px; font-weight: 900; color: #FF5F00; letter-spacing: 1px; }
+.job-info h3 { font-size: 32px; letter-spacing: 1px; margin-top: 5px; }
+
+.status-badge-brutalist {
+  padding: 6px 15px; font-family: 'JetBrains Mono'; font-size: 10px; font-weight: 900;
+  border: 2px solid #121F3A;
+}
+.status-badge-brutalist.closed { opacity: 0.3; }
+
+/* Technical Data Grid */
+.card-data-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 30px; margin-bottom: 30px; border-top: 1px solid #f0f0f0; padding-top: 20px;
+}
+.data-item { font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.data-item span { font-family: 'JetBrains Mono'; font-size: 10px; opacity: 0.4; }
+
+/* Actions */
+.card-actions-admin { border-top: 1px solid #f0f0f0; padding-top: 20px; }
+
+.btn-terminate {
+  background: #121F3A; color: white; border: none;
+  padding: 10px 25px; font-family: 'Bebas Neue'; font-size: 18px;
+  display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.2s;
+}
+.btn-terminate:hover { background: #FF5F00; }
+
+.archived-label { font-family: 'JetBrains Mono'; font-size: 11px; font-weight: 900; opacity: 0.3; }
+
+/* Inactive State Visuals */
+.job-log-card.closed { opacity: 0.5; border-style: dashed; }
+.job-log-card.closed .status-dot { background: #ccc; }
+.job-log-card.closed .card-side-status { background: #ccc; }
+
+/* UTILS */
+.loader-simple { padding: 100px; text-align: center; font-family: 'Bebas Neue'; font-size: 24px; opacity: 0.4; }
+.empty-state-simple { padding: 100px; text-align: center; opacity: 0.3; }
+
+@media (max-width: 768px) {
+  .card-data-grid { grid-template-columns: 1fr; gap: 15px; }
+  .admin-simple-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .header-stats { width: 100%; justify-content: space-between; }
+}

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap');
+
+:root {
+  --navy: #121F3A;
+  --orange: #FF5F00;
+  --white: #FFFFFF;
+  --gray: #F8F9FA;
+  --border: rgba(18, 31, 58, 0.1);
+}
+
+.register-titan-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--white);
+  color: var(--navy);
+  font-family: 'Inter', sans-serif;
+}
+
+.noise-bg {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.03; pointer-events: none; z-index: 100;
+}
+
+/* SIDEBAR */
+.register-sidebar {
+  flex: 0.35;
+  background: var(--navy);
+  color: white;
+  padding: 60px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-header {
+  font-family: 'Bebas Neue';
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.lang-btn-auth {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  font-family: 'JetBrains Mono';
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 60px;
+}
+
+.lang-btn-auth:hover { background: var(--orange); border-color: var(--orange); }
+
+.requisites-box h3 { font-size: 32px; margin-bottom: 20px; color: var(--orange); }
+.requisites-box ul { list-style: none; }
+.requisites-box li { 
+  margin-bottom: 15px; 
+  font-size: 14px; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+  opacity: 0.8;
+}
+
+.sidebar-footer { margin-top: auto; }
+.status-code { font-family: 'JetBrains Mono'; font-size: 10px; opacity: 0.4; margin-top: 5px; }
+
+/* FORM AREA */
+.register-form-area {
+  flex: 0.65;
+  padding: 80px;
+  overflow-y: auto;
+}
+
+.form-max-width { max-width: 800px; margin: 0 auto; }
+
+.back-nav {
+  display: flex; align-items: center; gap: 8px;
+  text-decoration: none; color: var(--navy); font-weight: 900;
+  font-size: 11px; opacity: 0.5; margin-bottom: 40px;
+}
+
+.reg-header h1 { font-size: 60px; margin-bottom: 10px; }
+.reg-header p { opacity: 0.6; margin-bottom: 60px; }
+
+/* FORM SECTIONS */
+.form-section {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--orange);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 1px;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+.input-field { margin-bottom: 20px; }
+.input-field label {
+  display: block; font-size: 11px; font-weight: 900;
+  margin-bottom: 8px; opacity: 0.6;
+}
+
+.input-field input, .input-field select {
+  width: 100%;
+  padding: 15px;
+  background: var(--gray);
+  border: 1px solid var(--border);
+  font-family: 'JetBrains Mono';
+  outline: none;
+}
+
+.titan-select {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.input-field input:focus { border-color: var(--orange); background: white; }
+
+/* FILE UPLOAD */
+.file-upload-box {
+  background: var(--gray);
+  padding: 30px;
+  border: 2px dashed var(--border);
+  width: 100%;
+}
+
+.file-upload-box label { 
+    font-size: 11px; 
+    font-weight: 900; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 15px; 
+}
+
+/* SUBMIT */
+.reg-submit-btn {
+  width: 100%;
+  padding: 25px;
+  background: var(--navy);
+  color: white;
+  border: none;
+  font-weight: 900;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reg-submit-btn:hover { background: var(--orange); transform: translateY(-5px); }
+
+.reg-form-footer { margin-top: 40px; text-align: center; font-size: 14px; }
+.reg-form-footer a { font-weight: 900; text-decoration: none; }
+
+@media (max-width: 1024px) {
+  .register-titan-container { flex-direction: column; }
+  .register-sidebar { height: auto; position: relative; padding: 40px; }
+  .register-form-area { padding: 40px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}

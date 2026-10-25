@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;900&family=JetBrains+Mono&display=swap');
+
+.admin-reports-root {
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: #121F3A; /* Navy */
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 80px;
+}
+
+.bebas { font-family: 'Bebas Neue', sans-serif; }
+.orange-text { color: #FF5F00; }
+
+/* HEADER */
+.admin-simple-header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 4px solid #121F3A;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.admin-simple-header h1 { font-size: 60px; line-height: 1; letter-spacing: -2px; }
+.admin-simple-header p { font-weight: 900; font-size: 12px; letter-spacing: 2px; opacity: 0.6; }
+
+/* DIAGRAM GRID */
+.diagram-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 20px;
+}
+.diagram-card.wide { grid-column: span 3; }
+
+.diagram-card {
+  border: 4px solid #121F3A;
+  padding: 30px;
+  background: white;
+}
+
+.card-label {
+  font-weight: 900;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  color: #FF5F00;
+}
+
+/* CIRCLE DIAGRAM (Success Rate) */
+.circle-diagram {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+}
+.circle-diagram svg { transform: rotate(-90deg); }
+.circle-diagram circle { fill: none; stroke-width: 10; }
+.circle-diagram .bg { stroke: #f0f0f0; }
+.circle-diagram .fill-orange { stroke: #FF5F00; }
+
+.circle-data {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.circle-data h2 { font-size: 40px; line-height: 1; margin: 0; }
+.circle-data span { font-size: 10px; font-weight: 900; opacity: 0.5; }
+
+/* VERTICAL BAR (Hiring Rate) */
+.bar-diagram-vertical {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 20px 0;
+}
+.v-bar-bg {
+  width: 40px;
+  height: 150px;
+  background: #f0f0f0;
+  border: 2px solid #121F3A;
+  position: relative;
+  overflow: hidden;
+}
+.v-bar-fill-navy {
+  position: absolute;
+  bottom: 0; width: 100%;
+  background: #121F3A;
+}
+.v-bar-data h2 { font-size: 60px; line-height: 1; margin: 0; }
+.v-bar-data p { font-size: 11px; font-weight: 900; opacity: 0.5; width: 100px; }
+
+/* SKILLS LIST (Horizontal Bars) */
+.skills-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.matrix-row { width: 100%; }
+.matrix-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 900;
+}
+.matrix-bar-bg {
+  width: 100%;
+  height: 15px;
+  background: #f0f0f0;
+  border: 2px solid #121F3A;
+}
+.matrix-bar-fill {
+  height: 100%;
+  background: #121F3A;
+}
+/* Highlight the top skill bar in orange */
+.matrix-row:first-child .matrix-bar-fill { background: #FF5F00; }
+
+.diag-footer {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 900;
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+@media (max-width: 1100px) {
+  .diagram-grid { grid-template-columns: 1fr; }
+  .diagram-card.wide { grid-column: auto; }
+}

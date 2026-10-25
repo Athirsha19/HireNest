@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap');
+
+:root {
+  --navy: #121F3A;
+  --orange: #FF5F00;
+  --bg-sleek: #f8fafc;
+  --glass: rgba(255, 255, 255, 0.8);
+}
+
+.admin-sleek-root {
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f1f4f9 100%);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--navy);
+  padding-bottom: 100px;
+}
+
+.noise-bg {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.02; pointer-events: none; z-index: 1;
+}
+
+.bebas { font-family: 'Bebas Neue', cursive; letter-spacing: 1px; }
+.orange-text { color: var(--orange); }
+
+/* HUD HEADER */
+.sleek-hud {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding: 60px 0 30px; border-bottom: 1px solid rgba(18, 31, 58, 0.1);
+  margin-bottom: 40px;
+}
+.sleek-hud h1 { font-size: 4rem; line-height: 1; margin: 0; }
+.system-path { font-family: 'JetBrains Mono'; font-size: 11px; opacity: 0.5; margin-top: 10px; display: flex; align-items: center; gap: 8px; }
+
+.live-counter { text-align: right; }
+.live-counter .count { font-size: 3rem; color: var(--orange); line-height: 1; }
+.live-counter .label { font-size: 10px; font-weight: 800; opacity: 0.4; display: block; }
+
+/* FILTER BAR */
+.sleek-filter-bar {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex; gap: 30px; align-items: center;
+  border: 1px solid rgba(18, 31, 58, 0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  margin-bottom: 40px;
+}
+
+.filter-item { display: flex; align-items: center; gap: 10px; }
+.filter-item select {
+  background: transparent; border: none; font-family: 'JetBrains Mono';
+  font-weight: 800; font-size: 12px; color: var(--navy); outline: none;
+  cursor: pointer;
+}
+
+.scan-btn {
+  margin-left: auto; background: var(--navy); color: white; border: none;
+  padding: 10px 25px; font-family: 'JetBrains Mono'; font-weight: 800;
+  font-size: 12px; display: flex; align-items: center; gap: 10px; cursor: pointer;
+  transition: 0.3s;
+}
+.scan-btn:hover { background: var(--orange); transform: translateY(-2px); }
+
+/* REGISTRY STREAM (ROWS) */
+.registry-stream { display: flex; flex-direction: column; gap: 12px; }
+
+.registry-row {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  display: flex; align-items: center;
+  border: 1px solid rgba(18, 31, 58, 0.05);
+  transition: all 0.3s ease;
+}
+.registry-row:hover {
+  background: #ffffff;
+  transform: translateX(10px);
+  border-color: var(--navy);
+  box-shadow: 0 10px 30px rgba(18, 31, 58, 0.05);
+}
+
+.u-avatar {
+  width: 50px; height: 50px; background: var(--navy); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue'; font-size: 24px; border-radius: 4px;
+  margin-right: 25px;
+}
+
+.u-details { flex: 1; }
+.u-identity { display: flex; align-items: center; gap: 15px; margin-bottom: 5px; }
+.u-identity h3 { font-size: 18px; font-weight: 800; }
+
+.role-pill {
+  font-family: 'JetBrains Mono'; font-size: 9px; font-weight: 800;
+  padding: 3px 8px; border: 1px solid;
+}
+.role-pill.worker { color: #64748b; border-color: #cbd5e1; }
+.role-pill.employer { color: var(--orange); border-color: var(--orange); }
+.role-pill.admin { background: var(--navy); color: white; }
+
+.u-meta { font-family: 'JetBrains Mono'; font-size: 12px; opacity: 0.5; display: flex; align-items: center; gap: 8px; }
+
+.u-status-section { margin-right: 40px; }
+.status-micro {
+  font-family: 'JetBrains Mono'; font-size: 10px; font-weight: 800;
+  display: flex; align-items: center; gap: 6px;
+}
+.status-micro.active { color: #10b981; }
+.status-micro.blocked { color: #ef4444; }
+.status-micro .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* ACTIONS */
+.tactical-btn {
+  padding: 10px 20px; border: 1px solid; background: transparent;
+  font-family: 'JetBrains Mono'; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  transition: 0.3s;
+}
+.tactical-btn.block { color: #ef4444; border-color: #fee2e2; }
+.tactical-btn.block:hover { background: #ef4444; color: white; border-color: #ef4444; }
+
+.tactical-btn.restore { color: #10b981; border-color: #d1fae5; }
+.tactical-btn.restore:hover { background: #10b981; color: white; border-color: #10b981; }
+
+.registry-row.blocked { opacity: 0.6; }
+
+/* UTILS */
+.sleek-loader { padding: 100px; text-align: center; font-family: 'JetBrains Mono'; font-weight: 800; opacity: 0.3; }
+
+@media (max-width: 768px) {
+  .sleek-filter-bar { flex-direction: column; align-items: flex-start; }
+  .registry-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .u-status-section { margin: 0; }
+  .u-actions { width: 100%; }
+  .tactical-btn { width: 100%; justify-content: center; }
+}
